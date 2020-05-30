@@ -1,0 +1,38 @@
+
+// Fonts
+@import url("https://fonts.googleapis.com/css?family=Raleway:300,400,600");
+
+// Variables
+@import "variables";
+
+// Bootstrap
+@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+
+//style css
+@import "style.scss";
+
+
+
+@import "main.scss";
+// <!-- Bootstrap CSS -->
+//@import "bootstrap.min.scss";
+// <!-- Animate CSS -->
+@import "animate.min.scss";
+// <!-- Font-awesome CSS-->
+@import "font-awesome.min.scss";
+// // <!-- Owl Caousel CSS -->
+// <link rel="stylesheet" href="vendor/OwlCarousel/owl.carousel.min.css">
+// <link rel="stylesheet" href="vendor/OwlCarousel/owl.theme.default.min.css">
+// // <!-- Main Menu CSS -->
+@import "meanmenu.min.scss";
+// // <!-- nivo slider CSS -->
+// <link rel="stylesheet" href="vendor/slider/css/nivo-slider.css" type="text/css" />
+// <link rel="stylesheet" href="vendor/slider/css/preview.css" type="text/css" media="screen" />
+// // <!-- Datetime Picker Style CSS -->
+// <link rel="stylesheet" href="css/jquery.datetimepicker.css">
+// // <!-- Magic popup CSS -->
+@import "magnific-popup.scss";
+// // <!-- Switch Style CSS -->
+@import "hover-min.scss";
+// // <!-- ReImageGrid CSS -->
+ @import "reImageGrid.scss";
