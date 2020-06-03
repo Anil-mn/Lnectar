@@ -14,8 +14,7 @@ class SessionController extends Controller
      */
     public function index()
     {
-       $sections = sections::all();
-       return view('incu.paper')->with('sections',$sections);
+        return response()->json(sections::get());
         
     }
 
