@@ -14,8 +14,8 @@ class PapersController extends Controller
      */
     public function index()
     {
-        $head = 'paperDetails';
-        return view('pages.PaperDetails')->with('head',$head);
+        
+        return response()->json(papers::get());
     }
 
     /**
