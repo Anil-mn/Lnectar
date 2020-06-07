@@ -1,3 +1,4 @@
+
 <template>
  <div class="courses1-area">
     <div class="container">
@@ -10,12 +11,12 @@
             <div class="courses-box1">
                 <div class="single-item-wrapper">
                     <div class="courses-img-wrapper hvr-bounce-to-bottom">
-                        <img class="img-responsive" src="images/section/{{$sec->Section_ID}}.jpg" style="height:160px; width:100 %;" alt="courses">
+                        <img class="img-responsive" src="images/section/name.jpg" style="height:160px; width:100 %;" alt="courses">
                         <a href="#"><i class="fa fa-link" aria-hidden="true"></i></a>
                     </div>
                     <div class="courses-content-wrapper">
-                        <h3 class="item-title"><a href="#">{{$sec->SubSection}}</a></h3>
-                        <p class="item-content">{{$sec ->Name}}</p>
+                        <h3 class="item-title"><a href="#">name</a></h3>
+                        <p class="item-content">name</p>
                       
                     </div>
                 </div>
@@ -28,6 +29,32 @@
 
 <script>
 export default {
-section();
+    data(){
+        return {
+           sections : [],
+           section: {
+              Section_ID: '',
+              Name: '',
+              SubSection: '',
+           },
+           Section_ID:''
+        }
+    },
+    created(){
+        this.abc();
+    },
+    methods : {
+        abc(){
+            fetch('api/sections')
+            .then(res => res.json())
+            .then(res => console.log(...res))
+            .then(this.sections ={...res})
+            .then(res=> {
+                this.section
+            })
+            
+        }
+    }
 }
+console.log(this.sections)
 </script>

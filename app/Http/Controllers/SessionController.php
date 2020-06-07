@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\sections;
+use App\Http\Resources\Sections as sectionsResources;
 
 class SessionController extends Controller
 {
@@ -14,7 +15,8 @@ class SessionController extends Controller
      */
     public function index()
     {
-        return response()->json(sections::get());
+     
+       return response()->json(sections::get());
         
     }
 

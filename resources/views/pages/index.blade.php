@@ -4,6 +4,8 @@
     @include('incu.about')
  
     @include('incu.paper')
+
+
     @include('incu.count')
     @include('incu.news')
     @include('incu.message')

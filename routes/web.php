@@ -19,4 +19,10 @@ Route::get('/about', 'PagesController@aboutus');
 Route::resource('sections','SessionController');
 Route::resource('news','NewsController');
 Route::resource('/paperdetails','PagesController');
+
+
+
+Route::get('/home','McaController@index');
+Route::resource('/class','McaController');
+Route::resource('/subject','NewsController');
 //Route::resource('/paperdetails','PapersController');

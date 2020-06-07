@@ -981,16 +981,21 @@ __webpack_require__(11);
 
 window.Vue = __webpack_require__(35);
 
+$.ajaxSetup({
+    headers: {
+        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+    }
+});
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-Vue.component('example', __webpack_require__(39));
-
+//Vue.component('example', require('./components/Example.vue'));
+Vue.component('paper', __webpack_require__(39));
 var app = new Vue({
-  el: '#app'
+    el: '#app'
 });
 
 /***/ }),
@@ -44805,7 +44810,7 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "resources/assets/js/components/Example.vue"
+Component.options.__file = "resources/assets/js/components/paper.vue"
 
 /* hot reload */
 if (false) {(function () {
@@ -44814,9 +44819,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-650f2efa", Component.options)
+    hotAPI.createRecord("data-v-3c9257f6", Component.options)
   } else {
-    hotAPI.reload("data-v-650f2efa", Component.options)
+    hotAPI.reload("data-v-3c9257f6", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -44957,12 +44962,51 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-    mounted: function mounted() {
-        console.log('Component mounted.');
+    data: function data() {
+        return {
+            sections: [],
+            section: {
+                Section_ID: '',
+                Name: '',
+                SubSection: ''
+            },
+            Section_ID: ''
+        };
+    },
+    created: function created() {
+        this.abc();
+    },
+
+    methods: {
+        abc: function abc() {
+            var _this = this;
+
+            fetch('api/sections').then(function (res) {
+                return res.json();
+            }).then(function (res) {
+                return console.log(res);
+            }).then(this.sections = res).then(function (res) {
+                _this.section;
+            });
+        }
     }
 });
+console.log(this.sections);
 
 /***/ }),
 /* 42 */
@@ -44979,21 +45023,76 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "container" }, [
-      _c("div", { staticClass: "row" }, [
-        _c("div", { staticClass: "col-md-8 col-md-offset-2" }, [
-          _c("div", { staticClass: "panel panel-default" }, [
-            _c("div", { staticClass: "panel-heading" }, [
-              _vm._v("Example Component")
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "panel-body" }, [
-              _vm._v(
-                "\n                    I'm an example component!\n                "
-              )
+    return _c("div", { staticClass: "courses1-area" }, [
+      _c("div", { staticClass: "container" }, [
+        _c("h2", { staticClass: "title-default-left" }, [_vm._v("Sessions")])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "container" }, [
+        _c(
+          "div",
+          {
+            staticClass: "rc-carousel",
+            attrs: {
+              "data-loop": "true",
+              "data-items": "4",
+              "data-margin": "30",
+              "data-autoplay": "true",
+              "data-autoplay-timeout": "10000",
+              "data-smart-speed": "2000",
+              "data-dots": "false",
+              "data-nav": "true",
+              "data-nav-speed": "false",
+              "data-r-x-small": "1",
+              "data-r-x-small-nav": "true",
+              "data-r-x-small-dots": "false",
+              "data-r-x-medium": "2",
+              "data-r-x-medium-nav": "true",
+              "data-r-x-medium-dots": "false",
+              "data-r-small": "2",
+              "data-r-small-nav": "true",
+              "data-r-small-dots": "false",
+              "data-r-medium": "4",
+              "data-r-medium-nav": "true",
+              "data-r-medium-dots": "false",
+              "data-r-large": "4",
+              "data-r-large-nav": "true",
+              "data-r-large-dots": "false"
+            }
+          },
+          [
+            _c("div", { staticClass: "courses-box1" }, [
+              _c("div", { staticClass: "single-item-wrapper" }, [
+                _c(
+                  "div",
+                  { staticClass: "courses-img-wrapper hvr-bounce-to-bottom" },
+                  [
+                    _c("img", {
+                      staticClass: "img-responsive",
+                      staticStyle: { height: "160px", width: "100 %" },
+                      attrs: { src: "images/section/name.jpg", alt: "courses" }
+                    }),
+                    _vm._v(" "),
+                    _c("a", { attrs: { href: "#" } }, [
+                      _c("i", {
+                        staticClass: "fa fa-link",
+                        attrs: { "aria-hidden": "true" }
+                      })
+                    ])
+                  ]
+                ),
+                _vm._v(" "),
+                _c("div", { staticClass: "courses-content-wrapper" }, [
+                  _c("h3", { staticClass: "item-title" }, [
+                    _c("a", { attrs: { href: "#" } }, [_vm._v("name")])
+                  ]),
+                  _vm._v(" "),
+                  _c("p", { staticClass: "item-content" }, [_vm._v("name")])
+                ])
+              ])
             ])
-          ])
-        ])
+          ]
+        )
       ])
     ])
   }
@@ -45003,7 +45102,7 @@ module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-650f2efa", module.exports)
+    require("vue-hot-reload-api")      .rerender("data-v-3c9257f6", module.exports)
   }
 }
 

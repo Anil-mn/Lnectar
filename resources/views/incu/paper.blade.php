@@ -27,8 +27,3 @@
 </div>
 <!-- Courses 1 Area End Here -->
 
-{{-- 
-<div id='app'>
-   <section></section>
-</div>
-<script src="{{URL::asset('js/app.js')}}">  --}}
